@@ -12,7 +12,7 @@ const ChatLists = ({ chats, currentUser, room, setChats }) => {
   const deleteChat = async (id) => {
     console.log(id, "this is id");
     try {
-      const res = await axios.delete(`http://localhost:8000/chat/${id}`);
+      const res = await axios.delete(`https://chatappbackend-yhhr.onrender.com/chat/${id}`);
       console.log(res);
       if (res.data.success) {
         console.log("Chat deleted successfully");

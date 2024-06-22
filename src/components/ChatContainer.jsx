@@ -16,7 +16,7 @@ const ChatContainer = () => {
   const socketio = useRef(null);
 
   useEffect(() => {
-    socketio.current = socketIOClient("http://localhost:8000");
+    socketio.current = socketIOClient("https://chatappbackend-yhhr.onrender.com");
 
     const handleClickOutside = (event) => {
       if (
@@ -85,7 +85,7 @@ const ChatContainer = () => {
   const deleteAllChat = async () => {
     try {
       const res = await axios.delete(
-        `http://localhost:8000/chat/delete/${room}`
+        `https://chatappbackend-yhhr.onrender.com/chat/delete/${room}`
       );
       if (res.data.result.acknowledged) {
         alert("All chats are deleted");
